@@ -1,0 +1,14 @@
+.card {
+  position: relative;
+  background-color: $white;
+  border-radius: 12px;
+  &__icon {
+  }
+
+  &__inner {
+    padding: 24px;
+  }
+
+  &__description {
+  }
+}

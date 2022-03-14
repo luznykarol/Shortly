@@ -1,17 +1,16 @@
 import React from "react";
 import Icon from "./Icon";
-
+import { header } from "../data/header";
 const Header = () => {
-  console.log("AAAA");
   return (
     <header className="header">
       <div className="container">
         <div className="header__inner">
           <Icon icon="logo" />
           <nav>
-            <a>Features</a>
-            <a>Pricing</a>
-            <a>Resources</a>
+            {header.map((item) => {
+              return <a href={item.link}>{item.text}</a>;
+            })}
           </nav>
         </div>
       </div>
