@@ -1,9 +1,15 @@
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Cta from "./components/Cta";
 import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header />
+      <Cta text="Boost your links today" button="Get started" link="/" />
+      <Footer />
     </div>
   );
 }
