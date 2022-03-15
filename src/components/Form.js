@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import Icon from "./Icon";
+import TrimResult from "./TrimResult";
+
 const Form = () => {
   const [value, setValue] = useState({
     main_input: "",
   });
+  const [items, setItems] = useState([]);
 
   const handleChange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -18,19 +21,34 @@ const Form = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data) => console.log(data));
+      .then((data) => {
+        setItems([...items, data]);
+      });
+  };
+
+  const handleCopy = (e) => {
+    console.log("copy", e);
   };
 
   return (
-    <form className="form__inner">
-      <Input
-        onChange={handleChange}
-        id="main_input"
-        placeholder="Shorten a link here..."
-      />
-      <Button onClick={handleSubmit} text="Shorten it" />
-      <Icon className="form__icon" icon="shorten_mobile" />
-    </form>
+    <>
+      <form className="form__inner">
+        <Input
+          onChange={handleChange}
+          id="main_input"
+          placeholder="Shorten a link here..."
+        />
+        <Button onClick={handleSubmit} text="Shorten it" />
+        <Icon className="form__icon" icon="shorten_mobile" />
+      </form>
+      {items && (
+        <div className="form__results">
+          {items.map((item) => (
+            <TrimResult onClick={handleCopy} item={item} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 .form {
+  background-color: $grey-bg;
   &__inner {
     position: relative;
     background-color: $violet;
@@ -28,6 +29,10 @@
 
     right: 0;
     bottom: 0;
+  }
+
+  &__results {
+    margin: 24px auto 0 auto;
   }
 }
 

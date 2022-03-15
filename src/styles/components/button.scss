@@ -3,7 +3,7 @@
   font-weight: bold;
   background-color: $primary;
   color: $white;
-  border-radius: 6px;
+  border-radius: $radius-sm;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -13,9 +13,7 @@
   position: relative;
   height: 48px;
   border: none;
-
   cursor: pointer;
-
   transition: 0.4s all ease;
 
   &:hover {
@@ -27,6 +25,6 @@
   }
 
   &--rounded {
-    border-radius: 32px;
+    border-radius: $radius-l;
   }
 }

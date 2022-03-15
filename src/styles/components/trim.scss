@@ -1,0 +1,33 @@
+.trim {
+  &__item {
+    background-color: $white;
+    border-radius: $radius-sm;
+
+    &:not(:last-of-type) {
+      margin: 0 auto 24px auto;
+    }
+
+    &__top,
+    &__bottom {
+      padding: 16px;
+    }
+
+    &__top {
+      color: $blue-dark;
+
+      &--result {
+        overflow: hidden;
+        position: relative;
+      }
+    }
+
+    &__bottom {
+      border-top: 1px solid $grey;
+
+      &--result {
+        color: $primary;
+        margin: 0 auto 16px auto;
+      }
+    }
+  }
+}
