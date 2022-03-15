@@ -6,9 +6,6 @@
   &__container {
     padding: 110px 0 0 0;
     @media (min-width: $min-width-l) {
-      // display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
-      // grid-column-gap: 28px;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -25,8 +22,6 @@
   margin-right: auto;
 
   &:nth-of-type(2) {
-    // top: 44px;
-
     margin-top: 88px;
 
     @media (min-width: $min-width-l) {
@@ -35,7 +30,6 @@
   }
 
   &:nth-of-type(3) {
-    // top: 88px;
     margin-top: 88px;
   }
 

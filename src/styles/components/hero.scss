@@ -16,8 +16,10 @@
     display: flex;
     flex-direction: column-reverse;
 
-    @media (min-width: $min-width-l) {
+    @media (min-width: $min-width-sm) {
       padding: 0 16px;
+    }
+    @media (min-width: $min-width-l) {
       display: initial;
     }
   }
@@ -39,9 +41,15 @@
       }
     }
 
+    @media (min-width: $min-width-sm) {
+      padding: 0;
+    }
+
     @media (min-width: $min-width-l) {
-      max-width: 560px;
-      display: initial;
+      max-width: 580px;
+      display: block;
+      width: 100%;
+      margin: 0;
     }
 
     &__title {
@@ -58,11 +66,10 @@
         text-align: left;
       }
     }
-    &__text {
-    }
   }
   &__icon {
     width: 100%;
+    margin: 0 auto;
 
     svg {
       width: 100%;
@@ -83,13 +90,10 @@
     @media (min-width: $min-width-l) {
       width: initial;
       position: absolute;
+      margin: 0;
       top: 50%;
-      right: -40%;
+      right: -20%;
       transform: translateY(-50%);
-    }
-
-    @media (min-width: $min-width-xl) {
-      // right: -140%;
     }
   }
 }

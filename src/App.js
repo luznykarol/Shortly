@@ -6,6 +6,7 @@ import { cards } from "./data/cards";
 import CardItem from "./components/CardItem";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
+import Form from "./components/Form";
 import "./App.scss";
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
         icon="working"
         link="/"
       />
+      <Section className="form">
+        <Form />
+      </Section>
       <Section
         className="cards"
         title="Advanced Statistics"

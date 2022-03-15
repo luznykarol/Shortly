@@ -21,7 +21,7 @@ const Header = () => {
             <a className="header__link" href="/">
               Login
             </a>
-            <Button rounded button="Sign Up" />
+            <Button text button="Sign Up" />
           </div>
         </div>
       </div>

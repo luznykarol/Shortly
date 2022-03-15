@@ -9,7 +9,7 @@ const Hero = ({ title, description, button, link, icon }) => {
         <div className="hero__inner">
           <h1 className="hero__inner__title">{title}</h1>
           <p className="hero__inner__description">{description}</p>
-          <Button rounded button="Get Started" />
+          <Button rounded text="Get Started" />
         </div>
         <Icon className="hero__icon" icon={icon} />
       </div>

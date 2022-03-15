@@ -8,7 +8,7 @@ const Cta = ({ text, button, link }) => {
       <div className="container">
         <div className="cta__inner">
           <h2 className="cta__title">{text}</h2>
-          <Button rounded button={button} link={link} />
+          <Button rounded text={button} link={link} />
         </div>
       </div>
     </section>
