@@ -8,13 +8,15 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
-        <Icon className="footer__logo" icon="logo" />
-        <div className="footer__lists">
-          {lists.map((item) => {
-            return <FooterList key={item.id} item={item} />;
-          })}
+        <div className="footer__inner">
+          <Icon className="footer__logo" icon="logo" />
+          <div className="footer__lists">
+            {lists.map((item) => {
+              return <FooterList key={item.id} item={item} />;
+            })}
+          </div>
+          <FooterSocial />
         </div>
-        <FooterSocial />
       </div>
     </footer>
   );

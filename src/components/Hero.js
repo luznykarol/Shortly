@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "./Icon";
 import Button from "./Button";
+
 const Hero = ({ title, description, button, link, icon }) => {
   return (
     <section className="hero">
@@ -10,8 +11,8 @@ const Hero = ({ title, description, button, link, icon }) => {
           <p className="hero__inner__description">{description}</p>
           <Button rounded button="Get Started" />
         </div>
+        <Icon className="hero__icon" icon={icon} />
       </div>
-      <Icon className="hero__icon" icon={icon} />
     </section>
   );
 };

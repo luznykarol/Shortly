@@ -5,6 +5,7 @@ import Cta from "./components/Cta";
 import { cards } from "./data/cards";
 import CardItem from "./components/CardItem";
 import Hero from "./components/Hero";
+import Section from "./components/Section";
 import "./App.scss";
 
 function App() {
@@ -18,15 +19,17 @@ function App() {
         icon="working"
         link="/"
       />
-      <section className="cards">
-        <div className="container">
-          <div className="cards__container">
-            {cards.map((item) => (
-              <CardItem item={item} />
-            ))}
-          </div>
+      <Section
+        className="cards"
+        title="Advanced Statistics"
+        description="Track how your links are performing across the web with our advanced statistics dashboard.">
+        <div className="cards__container">
+          {cards.map((item) => (
+            <CardItem item={item} />
+          ))}
         </div>
-      </section>
+      </Section>
+
       <Cta text="Boost your links today" button="Get started" link="/" />
       <Footer />
     </div>

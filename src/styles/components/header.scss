@@ -26,10 +26,13 @@
     display: flex;
   }
   &__inner {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: none;
+    @media (min-width: $min-width-l) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
     &__right {
       .btn {

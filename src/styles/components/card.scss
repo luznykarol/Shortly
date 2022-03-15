@@ -1,44 +1,79 @@
 .cards {
+  overflow: hidden;
   background-color: $grey-bg;
   padding: 120px 0;
 
   &__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 28px;
+    padding: 110px 0 0 0;
+    @media (min-width: $min-width-l) {
+      // display: grid;
+      // grid-template-columns: 1fr 1fr 1fr;
+      // grid-column-gap: 28px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
   }
 }
 .card {
   position: relative;
   background-color: $white;
   border-radius: 12px;
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
   &:nth-of-type(2) {
-    top: 44px;
+    // top: 44px;
+
+    margin-top: 88px;
+
+    @media (min-width: $min-width-l) {
+      margin-top: 44px;
+    }
   }
 
   &:nth-of-type(3) {
-    top: 88px;
+    // top: 88px;
+    margin-top: 88px;
   }
 
   &:not(:last-of-type) {
+    @media (min-width: $min-width-l) {
+      margin-right: 24px;
+    }
     &:after {
       content: "";
       position: absolute;
-      right: -60px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 6px;
       background-color: $primary;
+      left: 50%;
+      bottom: -60px;
+      transform: translateX(-50%);
+      height: 100px;
+      width: 6px;
+      z-index: -1;
+
+      @media (min-width: $min-width-l) {
+        right: -60px;
+        left: initial;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 6px;
+      }
     }
+  }
+
+  @media (min-width: $min-width-l) {
+    max-width: 352px;
+    width: 100%;
   }
 
   &__icon {
     background-color: $violet;
     position: absolute;
-    top: -48px;
-    left: 24px;
+
     padding: 16px;
     border-radius: 100%;
     width: 86px;
@@ -46,6 +81,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    top: -48px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media (min-width: $min-width-l) {
+      left: 24px;
+      transform: none;
+    }
   }
 
   &__title {
@@ -53,7 +96,12 @@
   }
 
   &__inner {
-    padding: 80px 24px 24px 24px;
+    padding: 80px 32px 24px 24px;
+    text-align: center;
+
+    @media (min-width: $min-width-l) {
+      text-align: left;
+    }
   }
 
   &__description {

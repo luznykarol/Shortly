@@ -5,11 +5,13 @@ const FooterList = ({ item }) => {
   return (
     <div className="footer__list">
       <div className="footer__list__header">{title}</div>
-      {items.map((item) => (
-        <a key={item.id} className="footer__list__link" href={item.link}>
-          {item.text}
-        </a>
-      ))}
+      <div className="footer__list__inner">
+        {items.map((item) => (
+          <a key={item.id} className="footer__list__link" href={item.link}>
+            {item.text}
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
