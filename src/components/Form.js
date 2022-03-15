@@ -12,7 +12,13 @@ const Form = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log(e);
+    fetch(`https://api.shrtco.de/v2/shorten?url=${value.main_input}`, {
+      method: "POST",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => console.log(data));
   };
 
   return (
