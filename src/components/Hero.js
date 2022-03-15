@@ -6,15 +6,12 @@ const Hero = ({ title, description, button, link, icon }) => {
     <section className="hero">
       <div className="container">
         <div className="hero__inner">
-          <div className="hero__inner__text">
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <Button></Button>
-          </div>
-
-          <Icon icon={icon} />
+          <h1 className="hero__inner__title">{title}</h1>
+          <p className="hero__inner__description">{description}</p>
+          <Button rounded button="Get Started" />
         </div>
       </div>
+      <Icon className="hero__icon" icon={icon} />
     </section>
   );
 };

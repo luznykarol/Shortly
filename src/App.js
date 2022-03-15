@@ -19,9 +19,13 @@ function App() {
         link="/"
       />
       <section className="cards">
-        {cards.map((item) => (
-          <CardItem item={item} />
-        ))}
+        <div className="container">
+          <div className="cards__container">
+            {cards.map((item) => (
+              <CardItem item={item} />
+            ))}
+          </div>
+        </div>
       </section>
       <Cta text="Boost your links today" button="Get started" link="/" />
       <Footer />

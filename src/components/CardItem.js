@@ -5,9 +5,11 @@ const CardItem = ({ item }) => {
   const { title, description, icon } = item;
   return (
     <article className="card">
-      <Icon className="card__icon" icon={icon} />
+      <div className="card__icon">
+        <Icon className="card__icon__icon" icon={icon} />
+      </div>
       <div className="card__inner">
-        <h4 className="card__title">{title}</h4>
+        <h3 className="card__title">{title}</h3>
         <p className="card__description">{description}</p>
       </div>
     </article>

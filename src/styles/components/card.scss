@@ -1,12 +1,59 @@
+.cards {
+  background-color: $grey-bg;
+  padding: 120px 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 28px;
+  }
+}
 .card {
   position: relative;
   background-color: $white;
   border-radius: 12px;
+
+  &:nth-of-type(2) {
+    top: 44px;
+  }
+
+  &:nth-of-type(3) {
+    top: 88px;
+  }
+
+  &:not(:last-of-type) {
+    &:after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 6px;
+      background-color: $primary;
+    }
+  }
+
   &__icon {
+    background-color: $violet;
+    position: absolute;
+    top: -48px;
+    left: 24px;
+    padding: 16px;
+    border-radius: 100%;
+    width: 86px;
+    height: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 0 0 24px 0;
   }
 
   &__inner {
-    padding: 24px;
+    padding: 80px 24px 24px 24px;
   }
 
   &__description {
