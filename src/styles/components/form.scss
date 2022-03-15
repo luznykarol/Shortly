@@ -3,7 +3,7 @@
   &__inner {
     position: relative;
     background-color: $violet;
-    border-radius: 6px;
+    border-radius: $radius-sm;
     padding: 24px;
     overflow: hidden;
     min-height: 157px;
@@ -40,6 +40,6 @@
   width: 100%;
   position: relative;
   z-index: 1;
-  border-radius: 6px;
+  border-radius: $radius-sm;
   padding: 12px 16px;
 }
