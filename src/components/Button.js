@@ -1,9 +1,7 @@
 import React from "react";
 
 const Button = ({
-  type = "button",
-  iconOnly = false,
-  disabled = false,
+  disabled,
   onClick,
   fullWidth,
   text,
@@ -11,13 +9,11 @@ const Button = ({
   className = "",
 }) => {
   const styles = `
-  btn  ${className} ${iconOnly ? "button--icon-only" : ""} ${
-    fullWidth ? "button--full-width" : ""
-  }`;
+  btn  ${className}  ${fullWidth ? "btn--full-width" : ""}`;
 
   return (
     <button
-      type={type}
+      type="button"
       className={styles}
       disabled={disabled}
       onClick={onClick}>

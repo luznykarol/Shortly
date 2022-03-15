@@ -22,6 +22,10 @@
     background-color: $primary-light;
   }
 
+  &--full-width {
+    width: 100%;
+  }
+
   &--rounded {
     border-radius: 32px;
   }

@@ -35,6 +35,8 @@
     }
 
     &__right {
+      display: flex;
+      align-items: center;
       .btn {
         margin: 0 0 0 32px;
       }
