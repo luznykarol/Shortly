@@ -5,6 +5,8 @@
 
   &__container {
     padding: 110px 0 0 0;
+    z-index: 1;
+    position: relative;
     @media (min-width: $min-width-l) {
       display: flex;
       align-items: flex-start;
