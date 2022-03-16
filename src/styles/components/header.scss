@@ -8,7 +8,27 @@
     margin: 0 44px 0 0;
   }
 
+  &__button {
+    margin: 0 auto;
+    border-radius: $radius-l !important;
+    @media (min-width: $min-width-l) {
+      margin: 0;
+    }
+  }
+
   &__link {
+    font-size: 14px;
+    color: $white;
+    text-align: center;
+    margin: 0 auto 24px auto;
+    @media (min-width: $min-width-l) {
+      text-align: left;
+      color: $grey;
+      // &:not(:last-of-type) {
+      margin: 0 32px 0 0;
+      // }
+    }
+
     transition: 0.4s all ease;
     &:hover {
       color: $blue-dark;
@@ -16,30 +36,91 @@
   }
 
   &__nav {
-    .header__link {
-      &:not(:last-of-type) {
-        margin-right: 32px;
-      }
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $min-width-l) {
+      display: initial;
     }
   }
   .container {
     display: flex;
   }
   &__inner {
-    display: none;
+    background-color: $violet;
+    border-radius: $radius-sm;
+    max-width: 230px;
+    width: 100%;
+    padding: 30px 16px;
+    position: absolute;
+    right: 16px;
+    top: 44px;
+    z-index: 100;
+    transform: scaleY(0);
+    transition: 0.4s transform, opacity ease;
+    opacity: 0;
+    transform-origin: 50% 0;
+
     @media (min-width: $min-width-l) {
       width: 100%;
+      opacity: 100;
+      position: relative;
+      top: initial;
+      max-width: 100%;
+      right: initial;
       display: flex;
       align-items: center;
+      transform: none;
       justify-content: space-between;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    &--active {
+      transform: scaleY(100%);
+      opacity: 100;
+
+      @media (min-width: $min-width-l) {
+      }
     }
 
     &__right {
       display: flex;
-      align-items: center;
-      .btn {
-        margin: 0 0 0 32px;
+      flex-direction: column;
+
+      @media (min-width: $min-width-l) {
+        flex-direction: row;
+        align-items: center;
       }
+    }
+  }
+
+  &__burger {
+    height: 16px;
+    width: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background-color: $blue-dark;
+    }
+
+    @media (min-width: $min-width-l) {
+      display: none;
     }
   }
 }
