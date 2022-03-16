@@ -1,14 +1,18 @@
 import React from "react";
 
-const Input = ({ onChange, id, placeholder }) => {
+const Input = ({ error, onChange, id, placeholder }) => {
   return (
-    <input
-      onChange={onChange}
-      className="input"
-      name={id}
-      id={id}
-      type="text"
-      placeholder={placeholder}></input>
+    <div className="field">
+      <input
+        onChange={onChange}
+        className={error ? "input input__error" : "input"}
+        name={id}
+        id={id}
+        type="text"
+        placeholder={placeholder}
+      />
+      {error && <span className="input__error__message">{error}</span>}
+    </div>
   );
 };
 

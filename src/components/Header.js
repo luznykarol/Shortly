@@ -9,9 +9,12 @@ const Header = () => {
         <Icon className="header__logo" icon="logo" />
         <div className="header__inner">
           <nav className="header__nav">
-            {header.map((item) => {
+            {header.map((item, i) => {
               return (
-                <a className="header__link" href={item.link}>
+                <a
+                  key={`header-link-${i}`}
+                  className="header__link"
+                  href={item.link}>
                   {item.text}
                 </a>
               );

@@ -15,7 +15,7 @@
   border: none;
   cursor: pointer;
   transition: 0.4s all ease;
-
+  position: relative;
   &:hover {
     background-color: $primary-light;
   }
@@ -26,5 +26,30 @@
 
   &--rounded {
     border-radius: $radius-l;
+  }
+
+  &--active {
+    overflow: hidden;
+    &:after {
+      opacity: 0;
+    }
+    &:active,
+    &:focus {
+      &:after {
+        position: absolute;
+        content: "Copied!";
+        transition: 0.4s all ease;
+        display: flex;
+        opacity: 1;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $violet;
+        border-radius: inherit;
+      }
+    }
   }
 }

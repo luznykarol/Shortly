@@ -12,14 +12,19 @@
     justify-content: center;
     align-items: center;
 
-    .btn {
-      margin: 16px auto 0 auto;
-      align-self: center;
-      width: 100%;
+    @media (min-width: $min-width-l) {
+      padding: 16px;
+      flex-direction: row;
     }
 
-    @media (min-width: $min-width-l) {
-      padding: 20px;
+    .btn {
+      margin: 44px auto 0 auto;
+      align-self: center;
+
+      @media (min-width: $min-width-l) {
+        max-width: 190px;
+        margin: 0 0 0 24px;
+      }
     }
   }
 
@@ -36,10 +41,26 @@
   }
 }
 
-.input {
+.field {
   width: 100%;
   position: relative;
   z-index: 1;
-  border-radius: $radius-sm;
-  padding: 12px 16px;
+  .input {
+    width: 100%;
+    border-radius: $radius-sm;
+    padding: 12px 16px;
+
+    &__error {
+      border: 2px solid $red;
+
+      &__message {
+        color: $red;
+        font-size: 12px;
+        padding: 4px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+  }
 }

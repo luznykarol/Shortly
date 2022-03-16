@@ -5,11 +5,13 @@ const Button = ({
   onClick,
   fullWidth,
   text,
-
+  active,
   className = "",
 }) => {
   const styles = `
-  btn  ${className}  ${fullWidth ? "btn--full-width" : ""}`;
+  btn  ${className} ${active && "btn--active"} ${
+    fullWidth ? "btn--full-width" : ""
+  }`;
 
   return (
     <button

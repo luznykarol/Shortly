@@ -9,12 +9,20 @@ const Form = () => {
     main_input: "",
   });
   const [items, setItems] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
 
+  function linkExists(value) {
+    return items.some((el) => {
+      return el.result.original_link === value.main_input;
+    });
+  }
+
   const handleSubmit = (e) => {
+    e.preventDefault();
     fetch(`https://api.shrtco.de/v2/shorten?url=${value.main_input}`, {
       method: "POST",
     })
@@ -22,7 +30,16 @@ const Form = () => {
         return response.json();
       })
       .then((data) => {
-        setItems([...items, data]);
+        if (data.ok) {
+          if (linkExists(value)) {
+            setError("This link was already shortened.");
+          } else {
+            setError();
+            setItems([...items, data]);
+          }
+        } else {
+          setError(data.error);
+        }
       });
   };
 
@@ -34,17 +51,22 @@ const Form = () => {
     <>
       <form className="form__inner">
         <Input
+          error={error}
           onChange={handleChange}
           id="main_input"
           placeholder="Shorten a link here..."
         />
-        <Button onClick={handleSubmit} text="Shorten it" />
+        <Button fullWidth onClick={handleSubmit} text="Shorten it" />
         <Icon className="form__icon" icon="shorten_mobile" />
       </form>
       {items && (
         <div className="form__results">
-          {items.map((item) => (
-            <TrimResult onClick={handleCopy} item={item} />
+          {items.map((item, i) => (
+            <TrimResult
+              key={`trim-result-${i}`}
+              onClick={handleCopy}
+              item={item}
+            />
           ))}
         </div>
       )}

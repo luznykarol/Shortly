@@ -28,8 +28,8 @@ function App() {
         title="Advanced Statistics"
         description="Track how your links are performing across the web with our advanced statistics dashboard.">
         <div className="cards__container">
-          {cards.map((item) => (
-            <CardItem item={item} />
+          {cards.map((item, i) => (
+            <CardItem key={`card-item-${i}`} item={item} />
           ))}
         </div>
       </Section>
