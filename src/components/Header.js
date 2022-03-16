@@ -38,7 +38,13 @@ const Header = () => {
             <Button oval className="header__button" text="Sign Up" />
           </div>
         </div>
-        <button onClick={handleBurgerClick} className="header__burger">
+        <button
+          onClick={handleBurgerClick}
+          className={
+            burgerActive
+              ? "header__burger header__burger--active"
+              : "header__burger"
+          }>
           <span></span>
           <span></span>
           <span></span>
