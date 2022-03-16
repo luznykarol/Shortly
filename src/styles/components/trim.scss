@@ -21,17 +21,18 @@
 
     &__top {
       color: $blue-dark;
-      max-width: 600px;
 
       @media (min-width: $min-width-l) {
+        max-width: 70%;
         max-width: auto;
         display: flex;
         align-items: center;
       }
 
-      &--result {
-        overflow: hidden;
+      &__result {
         position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 

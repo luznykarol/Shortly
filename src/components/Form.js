@@ -8,18 +8,20 @@ const Form = () => {
   const [value, setValue] = useState({
     main_input: "",
   });
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("shortened_links") || "[]")
+  );
   const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
   };
 
-  function linkExists(value) {
+  const linkExists = (value) => {
     return items.some((el) => {
       return el.result.original_link === value.main_input;
     });
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +38,10 @@ const Form = () => {
           } else {
             setError();
             setItems([...items, data]);
+            localStorage.setItem(
+              "shortened_links",
+              JSON.stringify([...items, data])
+            );
           }
         } else {
           setError(data.error);
