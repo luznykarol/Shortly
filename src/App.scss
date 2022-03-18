@@ -2,6 +2,7 @@
 @import "./styles/typography.scss";
 @import "./styles/colors.scss";
 @import "./styles/border.scss";
+@import "./styles/base.scss";
 @import "./styles/breakpoints.scss";
 @import "./styles/components/header.scss";
 @import "./styles/components/footer.scss";
@@ -11,49 +12,3 @@
 @import "./styles/components/hero.scss";
 @import "./styles/components/form.scss";
 @import "./styles/components/trim.scss";
-
-* {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased !important;
-}
-
-body {
-  font-size: 18px;
-  color: $grey;
-}
-
-ul,
-li {
-  padding: 0;
-  margin: 0;
-}
-
-.container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
-  position: relative;
-}
-
-a {
-  text-decoration: none;
-  color: $grey;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  color: $blue-dark;
-}
-
-.section {
-  &__text {
-    max-width: 515px;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-  }
-}

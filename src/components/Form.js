@@ -49,10 +49,6 @@ const Form = () => {
       });
   };
 
-  const handleCopy = (e) => {
-    console.log("copy", e);
-  };
-
   return (
     <>
       <form className="form__inner">
@@ -68,11 +64,7 @@ const Form = () => {
       {items && (
         <div className="form__results">
           {items.map((item, i) => (
-            <TrimResult
-              key={`trim-result-${i}`}
-              onClick={handleCopy}
-              item={item}
-            />
+            <TrimResult key={`trim-result-${i}`} item={item} />
           ))}
         </div>
       )}

@@ -14,7 +14,7 @@ h1 {
   line-height: 1.2;
   font-weight: 700;
   text-align: center;
-  @media (min-width: $min-width-l) {
+  @media (min-width: $min-width-lg) {
     font-size: 76px;
     text-align: left;
   }
@@ -23,7 +23,7 @@ h1 {
 h2 {
   margin-bottom: 24px;
   font-size: 28px;
-  @media (min-width: $min-width-l) {
+  @media (min-width: $min-width-lg) {
     font-size: 44px;
   }
 }

@@ -4,7 +4,7 @@
     border-radius: $radius-sm;
     display: block;
 
-    @media (min-width: $min-width-l) {
+    @media (min-width: $min-width-lg) {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -22,7 +22,7 @@
     &__top {
       color: $blue-dark;
 
-      @media (min-width: $min-width-l) {
+      @media (min-width: $min-width-lg) {
         max-width: 70%;
         max-width: auto;
         display: flex;
@@ -38,7 +38,7 @@
 
     &__bottom {
       border-top: 1px solid $grey;
-      @media (min-width: $min-width-l) {
+      @media (min-width: $min-width-lg) {
         display: flex;
         align-items: center;
         border: none;
@@ -48,7 +48,7 @@
         color: $primary;
         margin: 0 auto 16px auto;
 
-        @media (min-width: $min-width-l) {
+        @media (min-width: $min-width-lg) {
           margin: 0 24px 0 0;
         }
       }

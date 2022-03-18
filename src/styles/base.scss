@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+body {
+  font-size: 18px;
+  color: $grey;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: $grey;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $blue-dark;
+}
+
+.section {
+  &__text {
+    max-width: 515px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
